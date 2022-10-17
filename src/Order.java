@@ -43,16 +43,20 @@ public class Order {
         return dateTime;
     }
 
-
     //METHODS
 
     public void createOrder(){
-        System.out.println("Skriv kundens navn");
-        setCustomerName(MarioPizzabarRun.in.nextLine());
-        System.out.println("Skriv kundens telefon nummer");
-        setCustomerPhonenumber(MarioPizzabarRun.in.nextLine());
-        System.out.println("INdtast nummer på pizza");
-        setPizzaNumber(MarioPizzabarRun.in.nextInt());
-         dateTime = getDateTime().plusHours(1);
+        setCustomerName(customerName);
+        setCustomerPhonenumber(customerPhonenumber);
+        LocalDateTime dateTime1 = LocalDateTime.now();
+        setPizzaNumber(pizzaNumber);
     }
+
+
+
+
+
+
+
+
 }

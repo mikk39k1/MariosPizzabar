@@ -4,47 +4,29 @@ public class Pizza {
     private String toppings;
     private int price;
 
-
-    // SETTERS
-
-    public void setNumber(int number){
-        number = MarioPizzabarRun.in.nextInt();
-        this.number = number;
-    }
-
-    public void setName(String name){
-        name = MarioPizzabarRun.in.nextLine();
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void setToppings(String toppings){
-        toppings = MarioPizzabarRun.in.nextLine();
-        this.toppings = toppings;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
-    public void setPrice(int price){
-        price = MarioPizzabarRun.in.nextInt();
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    // GETTERS
-
-    public int getNumber(){
-        return number;
+    public void setToppings(String toppings) {
+        this.toppings = toppings;
     }
 
-    public String getName(){
-        return name;
-    }
+    // CONSTRUCTOR
 
-    public String getToppings(){
-        return toppings;
+    public Pizza(int number, String name, String toppings, int price){
+        setNumber(number);
+        setName(name);
+        setToppings(toppings);
+        setPrice(price);
     }
-
-    public int getPrice(){
-        return price;
-    }
-
-    // METHODS
 
 }

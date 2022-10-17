@@ -39,7 +39,7 @@ public class Menu {
                     tryAgain = false;
                     break;
                 case 2:
-                    System.out.println(menuItems[1]);
+                    new PizzaMenu().printPizzaMenu();
                     tryAgain = false;
                     break;
                 case 3:
