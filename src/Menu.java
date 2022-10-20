@@ -36,8 +36,8 @@ public class Menu {
             switch (userChoice) {
                 case 1:
                     System.out.println(menuItems[0]);
-                    new Order("").createOrder();
-                    new OrderList().createOrderlist();
+                    Order.setCustomerOrder();
+                    OrderList.printOrderlist();
                     tryAgain = false;
                     break;
                 case 2:

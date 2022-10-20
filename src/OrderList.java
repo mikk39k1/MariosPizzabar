@@ -1,26 +1,21 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class OrderList {
-    Order order = new Order("");
-    ArrayList<String> orderList = new ArrayList<String>();
+    Order order = new Order();
+    static ArrayList<Order> orderList = new ArrayList<>();
 
 
 
-    public void createOrderlist(){
-        orderList.add(String.valueOf(new Order(Pizza.getPizzaNumber() + order.getCustomerName())));
-    }
-
-    public void printOrderlist(){
+    public static void printOrderlist(){
         for (int i = 0; i < orderList.size(); i++) {
-            System.out.println(toString());
+            System.out.println((orderList.get(i)));
         }
     }
 
-    private String toString(Order order) {
-        return "OrderList: " + order.getCustomerName() + order.getCustomerPhonenumber();
+    public ArrayList<Order> getOrderList(){
+        return orderList;
     }
-
-
 
 
 

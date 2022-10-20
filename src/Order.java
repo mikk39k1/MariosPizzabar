@@ -1,6 +1,8 @@
 import java.time.LocalDateTime;
+import java.util.Scanner;
 
 public class Order {
+    Scanner in = new Scanner(System.in);
     private String customerName;
     private String customerPhonenumber;
     private LocalDateTime dateTime;
@@ -8,14 +10,19 @@ public class Order {
 
     // SETTERS
 
-    public void setCustomerName(String customerName) {
+
+    public String readCustomerName() {
+        System.out.println("Write the name of the customer");
         customerName = MarioPizzabarRun.in.nextLine();
-        this.customerName = customerName;
+        MarioPizzabarRun.in.nextLine();
+        return customerName;
+
     }
 
-    public void setCustomerPhonenumber(String customerPhonenumber) {
+    public String readCustomerPhone() {
+        System.out.println("Write the phone number for the customer");
         customerPhonenumber = MarioPizzabarRun.in.nextLine();
-        this.customerPhonenumber = customerPhonenumber;
+        return customerPhonenumber;
     }
 
 
@@ -25,36 +32,28 @@ public class Order {
 
     // GETTERS
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public String getCustomerPhonenumber() {
-        return customerPhonenumber;
-    }
-
-
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
 
     //METHODS
 
-    public void createOrder(){
-        setCustomerName(customerName);
-        setCustomerPhonenumber(customerPhonenumber);
+    public static void setCustomerOrder(){
+        new OrderList().getOrderList().add(new Order("",""));
     }
 
     // CONSTRUCTORS
-    public Order(String customerName){
-        createOrder();
+    public Order(String customerName, String customerPhonenumber){
+        readCustomerName();
+        readCustomerPhone();
+    }
+
+    public Order(){
+
     }
 
 
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Order: " +
+                "Customer Name: " + customerName + '\'' +
+                "Customer Phone nr.: " + customerPhonenumber;
+    }
 }
