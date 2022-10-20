@@ -15,7 +15,6 @@ public class Menu {
         menuHeader = "MENU:";
         leadText = "Please Choose: ";
         System.out.println(menuHeader);
-        System.out.println(toString());
         System.out.println(leadText);
     }
 
@@ -29,8 +28,8 @@ public class Menu {
 
         while (tryAgain) {
 
-
-            userChoice = MarioPizzabarRun.in.nextInt();
+            System.out.println(this);
+            int userChoice = MarioPizzabarRun.in.nextInt();
 
 
             switch (userChoice) {
@@ -38,19 +37,19 @@ public class Menu {
                     System.out.println(menuItems[0]);
                     Order.setCustomerOrder();
                     OrderList.printOrderlist();
-                    tryAgain = false;
+
                     break;
                 case 2:
                     new PizzaMenu().printPizzaMenu();
-                    tryAgain = false;
+
                     break;
                 case 3:
                     System.out.println(menuItems[2]);
-                    tryAgain = false;
+
                     break;
                 case 4:
                     System.out.println(menuItems[3]);
-                    tryAgain = false;
+
                     break;
                 case 9:
                     System.out.println(menuItems[4]);
@@ -60,10 +59,7 @@ public class Menu {
                     System.out.println("Please choose a valid option!");
                     System.out.println();
             }
-            if (tryAgain) {
-                printMenu();
-                readChoice();
-            }
+
         }
         return userChoice;
 

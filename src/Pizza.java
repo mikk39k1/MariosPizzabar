@@ -46,5 +46,10 @@ public class Pizza {
         setPrice(price);
     }
 
+    public String toString() {
+        return "Pizzamenu: " + pizzaNumber + " " + pizzaName + toppings
+                + " - " + price + ",-" + "\n";
+    }
+
 
 }

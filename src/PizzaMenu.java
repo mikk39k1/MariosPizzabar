@@ -2,8 +2,7 @@ import java.util.ArrayList;
 
 
 public class PizzaMenu {
-    Pizza pizza = new Pizza(0,"","",0);
-    private static ArrayList<Pizza> pizzaMenu = new ArrayList<Pizza>();
+    private static ArrayList<Pizza> pizzaMenu = new ArrayList<>();
 
 
     public void printPizzaMenu(){
@@ -22,17 +21,13 @@ public class PizzaMenu {
         pizzaMenu.add(new Pizza(9,"Toronfo: ","Tomatsauce, ost, bacon, kebab, chili og oregano",61));
         pizzaMenu.add(new Pizza(10,"Capricciosa: ","Tomatsauce, ost, skinke, champignon og oregano",61));
 
-        for (int i = 0; i < pizzaMenu.size(); i++) {
-            System.out.println(toString(pizzaMenu.get(i)));
+        for (Pizza menu : pizzaMenu) {
+            System.out.println(menu);
         }
 
 
 
     }
 
-    private String toString(Pizza pizza) {
-        return "Pizzamenu: " + pizza.getPizzaNumber() + " " + pizza.getPizzaName() + pizza.getToppings()
-                + " - " + pizza.getPrice() + ",-" + "\n";
-    }
 
 }
