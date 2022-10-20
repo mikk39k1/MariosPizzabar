@@ -1,5 +1,5 @@
 public class Pizza {
-    private static int pizzaNumber;
+    private int pizzaNumber;
     private String pizzaName;
     private String toppings;
     private int price;
@@ -21,7 +21,7 @@ public class Pizza {
     }
 
 
-    public static int getPizzaNumber(){
+    public int getPizzaNumber(){
         return pizzaNumber;
     }
 

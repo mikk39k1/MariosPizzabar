@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class OrderList {
-
     static ArrayList<Order> orderList = new ArrayList<>();
-
 
 
     public static void printOrderlist(){

@@ -21,8 +21,8 @@ public class PizzaMenu {
         pizzaMenu.add(new Pizza(9,"Toronfo: ","Tomatsauce, ost, bacon, kebab, chili og oregano",61));
         pizzaMenu.add(new Pizza(10,"Capricciosa: ","Tomatsauce, ost, skinke, champignon og oregano",61));
 
-        for (Pizza menu : pizzaMenu) {
-            System.out.println(menu);
+        for (int i = 0; i < pizzaMenu.size(); i++){
+            System.out.println(pizzaMenu.get(i));
         }
 
 

@@ -11,18 +11,17 @@ public class Order {
     // SETTERS
 
 
-    public String readCustomerName() {
+    public void readCustomerName() {
         System.out.println("Write the name of the customer");
-        customerName = MarioPizzabarRun.in.nextLine();
-        MarioPizzabarRun.in.nextLine();
-        return customerName;
+        this.customerName = MarioPizzabarRun.in.nextLine();
+        in.nextLine();
 
     }
 
-    public String readCustomerPhone() {
+    public void readCustomerPhone() {
         System.out.println("Write the phone number for the customer");
-        customerPhonenumber = MarioPizzabarRun.in.nextLine();
-        return customerPhonenumber;
+        this.customerPhonenumber = MarioPizzabarRun.in.nextLine();
+
     }
 
 
@@ -31,29 +30,33 @@ public class Order {
     }
 
     // GETTERS
+    public String getCustomerName(){
+        return customerName;
+    }
 
+    public String getCustomerPhonenumber(){
+        return customerPhonenumber;
+    }
 
     //METHODS
 
     public static void setCustomerOrder(){
-        new OrderList().getOrderList().add(new Order("",""));
+        new OrderList().getOrderList().add(new Order(null,null));
     }
 
-    // CONSTRUCTORS
+    //CONSTRUCTORS
     public Order(String customerName, String customerPhonenumber){
         readCustomerName();
         readCustomerPhone();
     }
 
-    public Order(){
 
-    }
 
 
     @Override
     public String toString() {
         return "Order: " +
-                "Customer Name: " + customerName + '\'' +
-                "Customer Phone nr.: " + customerPhonenumber;
+                "Customer Name: " + getCustomerName() + '\'' +
+                "Customer Phone nr.: " + getCustomerPhonenumber();
     }
 }
