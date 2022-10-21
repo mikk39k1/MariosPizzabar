@@ -1,10 +1,13 @@
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import java.time.format.DateTimeFormatter;
 
 public class Order {
     private String customerName;
     private String customerPhonenumber;
-    private LocalDateTime dateTime;
+    private LocalDateTime dateTime = LocalDateTime.now();
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    private String formatDateTime = dateTime.format(formatter);
 
 
 
@@ -40,6 +43,7 @@ public class Order {
 
     //METHODS
 
+
     public static void setCustomerOrder(){
         new OrderList().getOrderList().add(new Order("","" +
                 new Pizza(0,"","",0)));
@@ -59,6 +63,7 @@ public class Order {
         return "Order: " +
                 "Pizza Number: " + PizzaMenu.getPizzaIndex().getPizzaNumber() +
                 " Customer Name: " + getCustomerName() +
-                " Customer Phone nr.: " + getCustomerPhonenumber();
+                " Customer Phone nr.: " + getCustomerPhonenumber() +
+                " Time order was made: " + formatDateTime;
     }
 }
