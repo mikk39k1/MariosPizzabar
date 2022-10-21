@@ -35,14 +35,15 @@ public class Menu {
 
             switch (userChoice) {
                 case 1:
+                    PizzaMenu.createPizzaMenu();
                     System.out.println(menuItems[0]);
                     Order.setCustomerOrder();
-                    OrderList.printOrderlist();
+                    System.out.println(OrderList.getOrderList());
 
                     break;
                 case 2:
-                    new PizzaMenu().printPizzaMenu();
-
+                    PizzaMenu.createPizzaMenu();
+                    PizzaMenu.printPizzaMenu();
                     break;
                 case 3:
                     System.out.println(menuItems[2]);

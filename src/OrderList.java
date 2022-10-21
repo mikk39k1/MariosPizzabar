@@ -6,13 +6,14 @@ public class OrderList {
 
 
     public static void printOrderlist(){
-        for (Order value : orderList) {
-            System.out.println(value);
+        for (int i = 0; i < orderList.size(); i++) {
+            System.out.println(orderList.get(i));
         }
     }
 
-    public ArrayList<Order> getOrderList(){
-        return orderList;
+
+    public static ArrayList<Order> getOrderList() {
+        return (ArrayList<Order>) orderList;
     }
 
 

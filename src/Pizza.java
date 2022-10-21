@@ -1,5 +1,5 @@
 public class Pizza {
-    private static int pizzaNumber;
+    private int pizzaNumber;
     private String pizzaName;
     private String toppings;
     private int price;
@@ -9,9 +9,10 @@ public class Pizza {
     }
 
     public void setPizzaNumber(int pizzaNumber) {
-        System.out.println("Write Pizza Number");
-        this.pizzaNumber = MarioPizzabarRun.in.nextInt();
+        this.pizzaNumber = pizzaNumber;
     }
+
+
 
     public void setPrice(int price) {
         this.price = price;
@@ -22,7 +23,7 @@ public class Pizza {
     }
 
 
-    public static int getPizzaNumber(){
+    public int getPizzaNumber(){
         return pizzaNumber;
     }
 
@@ -38,6 +39,8 @@ public class Pizza {
         return price;
     }
 
+
+
     // CONSTRUCTOR
 
     public Pizza(int pizzaNumber, String pizzaName, String toppings, int price){
@@ -49,6 +52,7 @@ public class Pizza {
 
 
     public String toString() {
+
         return "Pizzamenu: " + pizzaNumber + " " + pizzaName + toppings
                 + " - " + price + ",-" + "\n";
     }
