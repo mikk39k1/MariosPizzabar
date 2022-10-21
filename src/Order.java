@@ -2,7 +2,6 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Order {
-    Scanner in = new Scanner(System.in);
     private String customerName;
     private String customerPhonenumber;
     private LocalDateTime dateTime;
@@ -48,11 +47,9 @@ public class Order {
 
     //CONSTRUCTORS
     public Order(String customerName, String customerPhonenumber){
+        MarioPizzabarRun.in.nextLine();
         readCustomerPhone(customerPhonenumber);
-        in.nextLine();
         readCustomerName(customerName);
-        PizzaMenu.getPizzaIndex();
-
     }
 
 
@@ -60,8 +57,8 @@ public class Order {
     @Override
     public String toString() {
         return "Order: " +
-                "Pizza Number: " + PizzaMenu.getPizzaIndex() +
-                "Customer Name: " + getCustomerName() +
-                "Customer Phone nr.: " + getCustomerPhonenumber();
+                "Pizza Number: " + PizzaMenu.getPizzaIndex().getPizzaNumber() +
+                " Customer Name: " + getCustomerName() +
+                " Customer Phone nr.: " + getCustomerPhonenumber();
     }
 }

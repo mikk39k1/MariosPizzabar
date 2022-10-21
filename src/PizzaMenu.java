@@ -34,12 +34,8 @@ public class PizzaMenu {
     public static Pizza getPizzaIndex () {
         System.out.println("Choose a pizza");
         userchoice = MarioPizzabarRun.in.nextInt();
-        for (int i = 0; i < pizzaMenu.size(); i++) {
-            if (userchoice - 1 == i) {
-                System.out.println(pizzaMenu.get(i));
-            }
-        }
-        return pizzaMenu.get(userchoice);
+
+        return pizzaMenu.get(userchoice - 1);
     }
 }
 
