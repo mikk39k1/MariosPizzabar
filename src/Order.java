@@ -14,14 +14,11 @@ public class Order {
     public void readCustomerName() {
         System.out.println("Write the name of the customer");
         this.customerName = MarioPizzabarRun.in.nextLine();
-        in.nextLine();
-
     }
 
     public void readCustomerPhone() {
         System.out.println("Write the phone number for the customer");
         this.customerPhonenumber = MarioPizzabarRun.in.nextLine();
-
     }
 
 
@@ -47,6 +44,7 @@ public class Order {
     //CONSTRUCTORS
     public Order(String customerName, String customerPhonenumber){
         readCustomerName();
+        in.nextLine();
         readCustomerPhone();
     }
 
@@ -56,7 +54,7 @@ public class Order {
     @Override
     public String toString() {
         return "Order: " +
-                "Customer Name: " + getCustomerName() + '\'' +
+                "Customer Name: " + getCustomerName() +
                 "Customer Phone nr.: " + getCustomerPhonenumber();
     }
 }
