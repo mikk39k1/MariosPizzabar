@@ -7,7 +7,6 @@ public class MarioPizzabarRun {
 
     void run(){
         menu.printMenu();
-
     }
 
     public static void main(String[] args) {

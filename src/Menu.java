@@ -6,6 +6,7 @@ public class Menu {
 
     private boolean tryAgain = true;
 
+
     public Menu(String menuHeader, String leadText, String[] menuItems) {
         printMenu();
         readChoice();
