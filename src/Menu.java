@@ -46,6 +46,7 @@ public class Menu {
                     break;
                 case 3:
                     OrderList.printOrderList();
+                    order.sumOfOrders();
                     break;
                 case 4:
                     OrderList.printOrderList();

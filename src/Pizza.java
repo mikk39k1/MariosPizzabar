@@ -43,12 +43,18 @@ public class Pizza {
 
     // CONSTRUCTOR
 
-    public Pizza(int pizzaNumber, String pizzaName, String toppings, int price){
+   public Pizza(int pizzaNumber, String pizzaName, String toppings, int price){
         setPizzaNumber(pizzaNumber);
         setPizzaName(pizzaName);
         setToppings(toppings);
         setPrice(price);
     }
+
+    public Pizza(){
+
+    }
+
+
 
 
 

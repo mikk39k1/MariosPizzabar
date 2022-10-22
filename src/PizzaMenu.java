@@ -24,6 +24,8 @@ public class PizzaMenu {
 
         return pizzaMenu;
     }
+
+
     public static ArrayList<Pizza> getPizzaMenu() {
         for (int i = 0; i < pizzaMenu.size(); i++) {
             System.out.println(pizzaMenu.get(i));
