@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 
 public class PizzaMenu {
-    private static int userchoice;
+    private int pizzaChoice;
     private static ArrayList<Pizza> pizzaMenu = new ArrayList<>();
 
 
@@ -24,18 +24,21 @@ public class PizzaMenu {
 
         return pizzaMenu;
     }
-    public static void printPizzaMenu() {
+    public static ArrayList<Pizza> getPizzaMenu() {
         for (int i = 0; i < pizzaMenu.size(); i++) {
             System.out.println(pizzaMenu.get(i));
         }
+        return pizzaMenu;
     }
 
 
-    public static Pizza getPizzaIndex () {
+    public void setPizzaChoice() {
         System.out.println("Choose a pizza");
-        userchoice = MarioPizzabarRun.in.nextInt();
+        pizzaChoice = MarioPizzabarRun.in.nextInt();
+    }
 
-        return pizzaMenu.get(userchoice - 1);
+    public Pizza getPizzaChoice(){
+        return pizzaMenu.get(pizzaChoice - 1);
     }
 }
 

@@ -1,8 +1,10 @@
 import java.time.LocalDateTime;
-import java.util.Scanner;
 import java.time.format.DateTimeFormatter;
 
 public class Order {
+    PizzaMenu pizzaMenu = new PizzaMenu();
+    public boolean hasPaid = false;
+
     private String customerName;
     private String customerPhonenumber;
     private LocalDateTime dateTime = LocalDateTime.now();
@@ -13,6 +15,10 @@ public class Order {
 
 
     // SETTERS
+
+    public void setHasPaid(boolean hasPaid){
+        this.hasPaid = hasPaid;
+    }
 
     public void readCustomerName(String customerName) {
         System.out.println("Write the name of the customer");
@@ -28,9 +34,7 @@ public class Order {
     }
 
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
-    }
+
 
     // GETTERS
     public String getCustomerName(){
@@ -41,29 +45,62 @@ public class Order {
         return customerPhonenumber;
     }
 
+    public boolean hasPaid(){
+        return hasPaid;
+    }
+
     //METHODS
 
+    public void chooseOrder(){
+        int orderChoice;
+        System.out.println("Which order do you wish to change?");
+        orderChoice = MarioPizzabarRun.in.nextInt() - 1;
+        for (int i = 0; i < OrderList.orderList.size(); i++) {
+            if (orderChoice == i){
+                System.out.println(OrderList.orderList.get(i));
+            }
+        }
+        MarioPizzabarRun.in.nextLine();
+    }
+
+    public void changeHasPaid(){
+        System.out.println("If the customer has paid, Press \"Y\"");
+        String hasPaidChoice = MarioPizzabarRun.in.nextLine();
+        if (hasPaidChoice.equalsIgnoreCase("y")){
+            hasPaid = true;
+        }
+    }
 
     public static void setCustomerOrder(){
-        new OrderList().getOrderList().add(new Order("","" +
-                new Pizza(0,"","",0)));
+        OrderList.getOrderList().add(new Order("",""  + new Pizza(0, "", "", 0)));
     }
+
+
 
     //CONSTRUCTORS
     public Order(String customerName, String customerPhonenumber){
         MarioPizzabarRun.in.nextLine();
         readCustomerPhone(customerPhonenumber);
         readCustomerName(customerName);
+        setHasPaid(hasPaid);
+        pizzaMenu.setPizzaChoice();
+        MarioPizzabarRun.in.nextLine();
     }
+
+    public Order(){
+    }
+
 
 
 
     @Override
     public String toString() {
-        return "Order: " +
-                "Pizza Number: " + PizzaMenu.getPizzaIndex().getPizzaNumber() +
-                " Customer Name: " + getCustomerName() +
-                " Customer Phone nr.: " + getCustomerPhonenumber() +
-                " Time order was made: " + formatDateTime;
+        return "Order: " + '\n' +
+                "Pizza Number: " + pizzaMenu.getPizzaChoice().getPizzaNumber() + '\n' +
+                "Pizza Price: " + pizzaMenu.getPizzaChoice().getPrice() + ",-" + '\n' +
+                "Is Pizza Paid? " + hasPaid + '\n' +
+                "Customer Name: " + getCustomerName() + '\n' +
+                "Customer Phone nr.: " + getCustomerPhonenumber() + '\n' +
+                "Time order was made: " + formatDateTime;
     }
 }

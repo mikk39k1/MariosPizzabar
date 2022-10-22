@@ -2,9 +2,11 @@ public class Menu {
     private int userChoice;
     private String menuHeader;
     private String leadText;
-    private String[] menuItems = {"1: CREATE ORDER", "2: PIZZAMENU", "3: ORDER LIST" ,"4: Create Pizza", "9: QUIT"};
+    private String[] menuItems = {"1: CREATE ORDER", "2: PIZZAMENU", "3: ORDER LIST" ,"4: PAY FOR ORDER", "9: QUIT"};
 
     private boolean tryAgain = true;
+    Order order = new Order();
+
 
 
     public Menu(String menuHeader, String leadText, String[] menuItems) {
@@ -37,19 +39,18 @@ public class Menu {
                 case 1:
                     PizzaMenu.createPizzaMenu();
                     Order.setCustomerOrder();
-                    OrderList.getOrderList();
                     break;
                 case 2:
                     PizzaMenu.createPizzaMenu();
-                    PizzaMenu.printPizzaMenu();
+                    PizzaMenu.getPizzaMenu();
                     break;
                 case 3:
-                    System.out.println(menuItems[2]);
-
+                    OrderList.printOrderList();
                     break;
                 case 4:
-                    System.out.println(menuItems[3]);
-
+                    OrderList.printOrderList();
+                    order.chooseOrder();
+                    order.changeHasPaid();
                     break;
                 case 9:
                     System.out.println(menuItems[4]);
