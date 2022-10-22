@@ -3,7 +3,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Order {
     PizzaMenu pizzaMenu = new PizzaMenu();
-    public boolean hasPaid = false;
+    private boolean hasPaid = true;
 
     private String customerName;
     private String customerPhonenumber;
@@ -16,8 +16,8 @@ public class Order {
 
     // SETTERS
 
-    public void setHasPaid(boolean hasPaid){
-        this.hasPaid = hasPaid;
+    public boolean setHasPaid(){
+        return this.hasPaid = false;
     }
 
     public void readCustomerName(String customerName) {
@@ -51,24 +51,18 @@ public class Order {
 
     //METHODS
 
-    public void chooseOrder(){
+
+    public boolean changeHasPaid(){
         int orderChoice;
         System.out.println("Which order do you wish to change?");
         orderChoice = MarioPizzabarRun.in.nextInt() - 1;
         for (int i = 0; i < OrderList.orderList.size(); i++) {
             if (orderChoice == i){
                 System.out.println(OrderList.orderList.get(i));
+                this.hasPaid = true;
             }
         }
-        MarioPizzabarRun.in.nextLine();
-    }
-
-    public void changeHasPaid(){
-        System.out.println("If the customer has paid, Press \"Y\"");
-        String hasPaidChoice = MarioPizzabarRun.in.nextLine();
-        if (hasPaidChoice.equalsIgnoreCase("y")){
-            hasPaid = true;
-        }
+        return hasPaid;
     }
 
     public static void setCustomerOrder(){
@@ -82,9 +76,9 @@ public class Order {
         MarioPizzabarRun.in.nextLine();
         readCustomerPhone(customerPhonenumber);
         readCustomerName(customerName);
-        setHasPaid(hasPaid);
         pizzaMenu.setPizzaChoice();
         MarioPizzabarRun.in.nextLine();
+        setHasPaid();
     }
 
     public Order(){

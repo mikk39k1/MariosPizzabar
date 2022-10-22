@@ -49,8 +49,8 @@ public class Menu {
                     break;
                 case 4:
                     OrderList.printOrderList();
-                    order.chooseOrder();
                     order.changeHasPaid();
+
                     break;
                 case 9:
                     System.out.println(menuItems[4]);
