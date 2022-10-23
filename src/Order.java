@@ -51,16 +51,6 @@ public class Order {
 
     //METHODS
 
-    public void sumOfOrders(){
-        for (int i = 0; i < OrderList.orderList.size(); i++) {
-            if (getHasPaid() == true){
-                System.out.println("Sum of the Pizzas sold all day: " +
-                        OrderList.orderList.get(i).pizzaMenu.getPizzaChoice().getPrice());
-            }
-        }
-
-
-    }
 
     public void changeHasPaid(){
         int orderChoice;

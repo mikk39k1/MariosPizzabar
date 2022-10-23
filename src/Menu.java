@@ -6,6 +6,7 @@ public class Menu {
 
     private boolean tryAgain = true;
     Order order = new Order();
+    OrderList orderList = new OrderList();
 
 
 
@@ -46,12 +47,11 @@ public class Menu {
                     break;
                 case 3:
                     OrderList.printOrderList();
-                    order.sumOfOrders();
+                    orderList.sumOfOrders();
                     break;
                 case 4:
                     OrderList.printOrderList();
                     order.changeHasPaid();
-
                     break;
                 case 9:
                     System.out.println(menuItems[4]);
