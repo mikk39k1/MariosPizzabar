@@ -2,11 +2,12 @@ public class Menu {
     private int userChoice;
     private String menuHeader;
     private String leadText;
-    private String[] menuItems = {"1: CREATE ORDER", "2: PIZZAMENU", "3: ORDER LIST" ,"4: PAY FOR ORDER", "9: QUIT"};
+    private String[] menuItems = {"1: CREATE ORDER", "2: PIZZAMENU", "3: ORDER LIST" ,"4: PAY FOR ORDER","5: REMOVE ORDER", "6: MOVE ORDER TO FINISHED", "7: PRINT FINISHED ORDERS", "9: QUIT"};
 
     private boolean tryAgain = true;
     Order order = new Order();
     OrderList orderList = new OrderList();
+    FinishedOrders finishedOrders = new FinishedOrders();
 
 
 
@@ -25,7 +26,7 @@ public class Menu {
 
     @Override
     public String toString() {
-        return menuItems[0] + "\n" + menuItems[1] + "\n" + menuItems[2] + "\n" + menuItems[3];
+        return menuItems[0] + "\n" + menuItems[1] + "\n" + menuItems[2] + "\n" + menuItems[3] + '\n' + menuItems[4] + '\n' + menuItems[5] + '\n' + menuItems[6];
     }
 
     public int readChoice() {
@@ -52,6 +53,18 @@ public class Menu {
                 case 4:
                     OrderList.printOrderList();
                     order.changeHasPaid();
+                    break;
+                case 5:
+                    OrderList.printOrderList();
+                    orderList.removeOrderFromOrderlist();
+                    OrderList.printOrderList();
+                    break;
+                case 6:
+                    OrderList.printOrderList();
+                    FinishedOrders.moveOrderToFinishedOrders();
+                    break;
+                case 7:
+                    finishedOrders.printFinishedOrders();
                     break;
                 case 9:
                     System.out.println(menuItems[4]);

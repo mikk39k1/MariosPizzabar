@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class OrderList {
     Order order = new Order();
@@ -6,7 +7,16 @@ public class OrderList {
     static ArrayList<Order> orderList = new ArrayList<>();
 
 
-
+    public void removeOrderFromOrderlist(){
+        int orderChoice;
+        System.out.println("Which order do you wish to move to finished orders?");
+        orderChoice = MarioPizzabarRun.in.nextInt() -1;
+        for (int i = 0; i < OrderList.orderList.size(); i++) {
+            if (orderChoice == i){
+                OrderList.orderList.remove(orderChoice);
+            }
+        }
+    }
 
 
     public static ArrayList<Order> getOrderList() {

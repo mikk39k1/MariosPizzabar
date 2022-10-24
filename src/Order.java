@@ -54,7 +54,7 @@ public class Order {
 
     public void changeHasPaid(){
         int orderChoice;
-        System.out.println("Which order do you wish to change?");
+        System.out.println("Which order do you wish to pay for?");
         orderChoice = MarioPizzabarRun.in.nextInt() - 1;
         for (int i = 0; i < OrderList.orderList.size(); i++) {
             if (orderChoice == i){
