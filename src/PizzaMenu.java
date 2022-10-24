@@ -37,7 +37,9 @@ public class PizzaMenu {
 
 
     public void setPizzaChoice() {
-        System.out.println("Choose a pizza");
+        System.out.println(Colors.GREEN + "CHOOSE A PIZZA: " + Colors.RESET);
+        System.out.println();
+        getPizzaMenu();
         pizzaChoice = MarioPizzabarRun.in.nextInt();
     }
 

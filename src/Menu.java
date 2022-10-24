@@ -26,7 +26,8 @@ public class Menu {
 
     @Override
     public String toString() {
-        return menuItems[0] + "\n" + menuItems[1] + "\n" + menuItems[2] + "\n" + menuItems[3] + '\n' + menuItems[4] + '\n' + menuItems[5] + '\n' + menuItems[6];
+        return menuItems[0] + "\n" + menuItems[1] + "\n" + menuItems[2] + "\n" + menuItems[3] + '\n' + menuItems[4]
+                + '\n' + menuItems[5] + '\n' + menuItems[6] + '\n' + menuItems[7];
     }
 
     public int readChoice() {
@@ -67,7 +68,6 @@ public class Menu {
                     finishedOrders.sumOfOrders();
                     break;
                 case 9:
-                    System.out.println(menuItems[4]);
                     tryAgain = false;
                     break;
                 default:

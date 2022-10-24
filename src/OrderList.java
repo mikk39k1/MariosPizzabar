@@ -9,7 +9,7 @@ public class OrderList {
 
     public void removeOrderFromOrderlist(){
         int orderChoice;
-        System.out.println("Which order do you wish to move to finished orders?");
+        System.out.println(Colors.GREEN + "WHICH ORDER DO YOU WISH TO PAY FOR?" + Colors.RESET);
         orderChoice = MarioPizzabarRun.in.nextInt() -1;
         for (int i = 0; i < OrderList.orderList.size(); i++) {
             if (orderChoice == i){
