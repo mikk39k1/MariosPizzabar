@@ -48,7 +48,6 @@ public class Menu {
                     break;
                 case 3:
                     OrderList.printOrderList();
-                    orderList.sumOfOrders();
                     break;
                 case 4:
                     OrderList.printOrderList();
@@ -65,6 +64,7 @@ public class Menu {
                     break;
                 case 7:
                     finishedOrders.printFinishedOrders();
+                    finishedOrders.sumOfOrders();
                     break;
                 case 9:
                     System.out.println(menuItems[4]);

@@ -25,6 +25,7 @@ public class FinishedOrders {
             if (OrderList.orderList.get(orderChoice).getHasPaid()==true){
                 finishedOrders.add(OrderList.orderList.get(orderChoice));
 
+                System.out.println();
                 System.out.println("Do you wish to move this order? press Y");
                 System.out.println();
                 String confirmOrderChoice;
@@ -33,6 +34,7 @@ public class FinishedOrders {
                     OrderList.orderList.remove(orderChoice);
                 }
             } else {
+                System.out.println();
                 System.out.println("Please change the order to \"Paid\"");
                 System.out.println();
             }
@@ -41,6 +43,17 @@ public class FinishedOrders {
 
 
         }
+    }
+
+    public void sumOfOrders(){
+        int sumDay = 0;
+        for (int i = 0; i < finishedOrders.size(); i++) {
+            if (finishedOrders.get(i).getHasPaid()){
+                sumDay += finishedOrders.get(i).pizzaMenu.getPizzaChoice().getPrice();
+            }
+        }
+        System.out.println("Revenue of the day: " + sumDay + ",-");
+        System.out.println();
     }
 
 
